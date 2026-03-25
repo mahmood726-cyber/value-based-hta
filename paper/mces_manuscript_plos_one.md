@@ -1,12 +1,12 @@
 # Automated Benefit-Harm Linkage Across 488 Cochrane Systematic Reviews: A Cross-Sectional Analysis of Net Clinical Benefit Using the Pairwise Meta-Analysis Database
 
-**Mahmood Ul Hassan**^1^
+**Mahmood Ahmad**^1^
 
-^1^ [AFFILIATION_PLACEHOLDER]
+^1^ Royal Free Hospital, London, United Kingdom
 
-**Corresponding author:** Mahmood Ul Hassan, [EMAIL_PLACEHOLDER]
+**Corresponding author:** Mahmood Ahmad, mahmood.ahmad2@nhs.net
 
-ORCID: [ORCID_PLACEHOLDER]
+ORCID: 0009-0003-7781-4478
 
 ---
 

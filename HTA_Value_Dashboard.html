@@ -102,5 +102,101 @@
         options: { plugins: { legend: { display: false } } }
     });
 </script>
+<script>
+window.__webrValidationConfig = {
+    appName: 'HTA Value-Based Dashboard',
+    intro: 'Checks that the headline totals, chart shares, and net-benefit labels remain internally consistent.',
+    async ready(h) {
+        await h.waitFor(() => !!window.Chart && !!Chart.getChart(document.getElementById('valueChart')));
+    },
+    tests: [
+        {
+            name: 'Chart counts match the displayed review total',
+            collect(h) {
+                const chart = Chart.getChart(document.getElementById('valueChart'));
+                return {
+                    counts: chart.data.datasets[0].data.map(Number),
+                    total: h.parseNumber(document.querySelector('.stat-card .stat-val').textContent),
+                };
+            },
+            r(payload) {
+                return `
+counts <- c(${payload.counts.join(', ')})
+total <- ${payload.total}
+if (abs(sum(counts) - total) < 1e-8) {
+  "PASS|Chart counts sum to the displayed review total."
+} else {
+  paste0("FAIL|Chart counts sum to ", sum(counts), " but the dashboard reports ", total, " reviews.")
+}`.trim();
+            }
+        },
+        {
+            name: 'Percentage cards agree with the chart counts',
+            collect(h) {
+                const chart = Chart.getChart(document.getElementById('valueChart'));
+                const values = chart.data.datasets[0].data.map(Number);
+                const cards = Array.from(document.querySelectorAll('.stat-card .stat-val')).slice(1);
+                return {
+                    values,
+                    total: values.reduce((sum, value) => sum + value, 0),
+                    displayed: cards.map((node) => h.parseNumber(node.textContent)),
+                };
+            },
+            r(payload) {
+                return `
+values <- c(${payload.values.join(', ')})
+displayed <- c(${payload.displayed.join(', ')})
+total <- ${payload.total}
+expected <- round(values[1:2] / total * 100, 1)
+if (length(displayed) == 2 && all(abs(expected - displayed) < 0.11)) {
+  "PASS|Displayed percentages match the bar-chart shares."
+} else {
+  paste0(
+    "FAIL|Expected low/uncertain shares ",
+    paste(expected, collapse = ", "),
+    " but the cards show ",
+    paste(displayed, collapse = ", "),
+    "."
+  )
+}`.trim();
+            }
+        },
+        {
+            name: 'Net-benefit table labels follow the published threshold rule',
+            collect() {
+                const rows = Array.from(document.querySelectorAll('tbody tr')).map((row) => {
+                    const cells = row.querySelectorAll('td');
+                    return {
+                        benefit: Number(cells[3].textContent.trim()),
+                        label: cells[4].textContent.trim(),
+                    };
+                });
+                return {
+                    benefits: rows.map((row) => row.benefit),
+                    labels: rows.map((row) => row.label),
+                };
+            },
+            r(payload, h) {
+                return `
+benefits <- c(${payload.benefits.join(', ')})
+labels <- ${h.rVector(payload.labels)}
+expected <- ifelse(benefits < 0, "LOW VALUE", ifelse(benefits <= 0.1, "UNCERTAIN", "HIGH VALUE"))
+if (all(labels == expected)) {
+  "PASS|Table labels remain aligned with the negative / small-positive / strong-positive net-benefit rule."
+} else {
+  paste0(
+    "FAIL|Expected ",
+    paste(expected, collapse = ", "),
+    " but found ",
+    paste(labels, collapse = ", "),
+    "."
+  )
+}`.trim();
+            }
+        }
+    ]
+};
+</script>
+<script src="../_shared/webr-validation.js"></script>
 </body>
 </html>
