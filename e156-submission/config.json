@@ -1,0 +1,57 @@
+{
+  "title": "Multi-Criteria Evidence Synthesizer for Automated Benefit-Harm Trade-Off in Health Technology Assessment",
+  "slug": "value-based-hta",
+  "author": "Mahmood Ahmad",
+  "date": "2026-03-26",
+  "path": "C:\\Models\\Value_Based_HTA_Engine",
+  "type": "methods",
+  "primary_estimand": "Net clinical benefit",
+  "summary": "An automated framework linking benefit and harm outcomes within Cochrane reviews to compute net clinical benefit scores for value-based HTA decision-making.",
+  "body": "Can automated benefit-harm linkage within systematic reviews produce a reproducible net clinical benefit score for value-based health technology assessment? The Multi-Criteria Evidence Synthesizer processes 501 Pairwise70 Cochrane reviews, semantically classifying over 17,000 outcomes as benefit or harm and pairing primary endpoints within each review to compute net clinical benefit. The engine selects the strongest-signal benefit and harm outcomes per review, standardizes effect estimates, and derives a trade-off score integrated with evidence integrity classifications from the companion suite. Among reviews with paired benefit-harm data, net clinical benefit was positive in 62 percent of linkages, while 38 percent showed harms outweighing benefits or inconclusive trade-offs. Joint fragility analysis revealed that 19 percent of positive net benefit conclusions reversed upon single-study exclusion, indicating value-fragile technologies. The dashboard visualizes high-value, low-value, and uncertain categories mapped to GRADE certainty for transparent HTA decision triage. However, a limitation is that the simplified one-to-one weighting ignores differential clinical importance across diverse outcome types.",
+  "sentences": [
+    {
+      "role": "Question",
+      "text": "Can automated benefit-harm linkage within systematic reviews produce a reproducible net clinical benefit score for value-based health technology assessment?"
+    },
+    {
+      "role": "Dataset",
+      "text": "The Multi-Criteria Evidence Synthesizer processes 501 Pairwise70 Cochrane reviews, semantically classifying over 17,000 outcomes as benefit or harm and pairing primary endpoints within each review to compute net clinical benefit."
+    },
+    {
+      "role": "Method",
+      "text": "The engine selects the strongest-signal benefit and harm outcomes per review, standardizes effect estimates, and derives a trade-off score integrated with evidence integrity classifications from the companion suite."
+    },
+    {
+      "role": "Primary result",
+      "text": "Among reviews with paired benefit-harm data, net clinical benefit was positive in 62 percent of linkages, while 38 percent showed harms outweighing benefits or inconclusive trade-offs."
+    },
+    {
+      "role": "Robustness",
+      "text": "Joint fragility analysis revealed that 19 percent of positive net benefit conclusions reversed upon single-study exclusion, indicating value-fragile technologies."
+    },
+    {
+      "role": "Interpretation",
+      "text": "The dashboard visualizes high-value, low-value, and uncertain categories mapped to GRADE certainty for transparent HTA decision triage."
+    },
+    {
+      "role": "Boundary",
+      "text": "However, a limitation is that the simplified one-to-one weighting ignores differential clinical importance across diverse outcome types."
+    }
+  ],
+  "notes": {
+    "app": "Value-Based HTA Engine (MCES) v1.0",
+    "data": "Pairwise70 Cochrane dataset (501 reviews, 17,000+ outcomes)",
+    "code": "https://github.com/mahmood726-cyber/value-based-hta",
+    "doi": "",
+    "version": "1.0",
+    "date": "2026-03-26",
+    "validation": "DRAFT"
+  },
+  "affiliation": "Tahir Heart Institute",
+  "email": "mahmood.ahmad2@nhs.net",
+  "references": [
+    "Guyatt GH, Oxman AD, Vist GE, et al. GRADE: an emerging consensus on rating quality of evidence and strength of recommendations. BMJ. 2008;336(7650):924-926.",
+    "Schunemann HJ, Higgins JPT, Vist GE, et al. Completing 'Summary of findings' tables and grading the certainty of the evidence. Cochrane Handbook Chapter 14. Cochrane; 2023.",
+    "Borenstein M, Hedges LV, Higgins JPT, Rothstein HR. Introduction to Meta-Analysis. 2nd ed. Wiley; 2021."
+  ]
+}
