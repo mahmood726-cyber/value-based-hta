@@ -1,6 +1,6 @@
 Mahmood Ahmad
 Tahir Heart Institute
-author@example.com
+mahmood.ahmad2@nhs.net
 
 Multi-Criteria Evidence Synthesizer for Automated Benefit-Harm Trade-Off in Health Technology Assessment
 
