@@ -38,9 +38,9 @@ The manuscript structure below is deliberately aligned to common open-software r
 The project combines R classification and calculation scripts with an HTML dashboard. Local materials include a project protocol, manuscript drafts, example data, and F1000 artifacts for reviewer reruns.
 
 ### Installation, runtime, and reviewer reruns
-The local implementation is packaged under `C:\Models\Value_Based_HTA_Engine`. The manuscript identifies the local entry points, dependency manifest, fixed example input, and expected saved outputs so that reviewers can rerun the documented workflow without reconstructing it from scratch.
+The implementation is distributed via the public repository at <https://github.com/mahmood726-cyber/value-based-hta>. The manuscript identifies the entry points, dependency manifest, fixed example input, and expected saved outputs so that reviewers can rerun the documented workflow without reconstructing it from scratch.
 
-- Entry directory: `C:\Models\Value_Based_HTA_Engine`.
+- Repository: <https://github.com/mahmood726-cyber/value-based-hta>.
 - Detected documentation entry points: `README.md`, `f1000_artifacts/tutorial_walkthrough.md`.
 - Detected environment capture or packaging files: `environment.yml`.
 - Named worked-example paths in this draft: `paper/mces_manuscript_plos_one.md` and `MCES_Manuscript_Value.md` as narrative sources; `HTA_Value_Dashboard.html` for the browser-facing result layer; `f1000_artifacts/example_dataset.csv` and tutorial materials for reviewer walkthroughs.
@@ -100,7 +100,6 @@ The F1000 paper directly addresses common reviewer concerns: outcome mapping is 
 - The dashboard summarizes trade-offs but does not replace full economic modeling.
 
 ## Software Availability
-- Local source package: `Value_Based_HTA_Engine` under `C:\Models`.
 - Public repository: `https://github.com/mahmood726-cyber/value-based-hta`.
 - Public source snapshot: Fixed public commit snapshot available at `https://github.com/mahmood726-cyber/value-based-hta/tree/0752dc772dc1f297d4d3ce03e1b7c91e3f6e6b77`.
 - DOI/archive record: No project-specific DOI or Zenodo record URL was detected locally; archive registration pending.

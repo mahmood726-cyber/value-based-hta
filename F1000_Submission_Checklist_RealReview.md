@@ -1,8 +1,7 @@
 # F1000 Submission Checklist (Real-Review Aligned)
 
 Updated: 2026-03-06
-Real review source: `C:\HTML apps\reviewer Report.txt`
-Package: `C:\Models\Value_Based_HTA_Engine`
+Package: <https://github.com/mahmood726-cyber/value-based-hta>
 
 ## Core gates derived from real peer-review concerns
 - [x] Full manuscript structure with non-skeleton Methods/Use cases/Discussion.

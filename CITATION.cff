@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Value-Based HTA Engine: Multi-Criteria Evidence Synthesizer for Automated Benefit-Harm Trade-Off"
+version: "1.0"
+date-released: "2026-03-26"
+license: MIT
+repository-code: "https://github.com/mahmood726-cyber/value-based-hta"
+url: "https://mahmood726-cyber.github.io/value-based-hta/"
+type: software
+authors:
+  - family-names: Ahmad
+    given-names: Mahmood
+    affiliation: "Royal Free Hospital"
+    orcid: "https://orcid.org/0009-0003-7781-4478"
+  - family-names: Kumar
+    given-names: Niraj
+    affiliation: "Royal Free Hospital"
+  - family-names: Dar
+    given-names: Bilaal
+    affiliation: "King's College Medical School"
+  - family-names: Khan
+    given-names: Laiba
+    affiliation: "Royal Free Hospital"
+  - family-names: Woo
+    given-names: Andrew
+    affiliation: "St George's Medical School"
+keywords:
+  - health technology assessment
+  - meta-analysis
+  - evidence synthesis
+  - net clinical benefit
+  - reproducibility
