@@ -20,3 +20,15 @@ jobs:
           pip install -r requirements.txt
       - name: Run smoke tests
         run: python -m pytest tests/ -v
+
+  rscript-parse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "4.3"
+      - name: Syntax-check R scripts
+        run: |
+          Rscript -e 'invisible(parse(file = "semantic_outcome_mapper.R"))'
+          Rscript -e 'invisible(parse(file = "calculate_net_benefit.R"))'

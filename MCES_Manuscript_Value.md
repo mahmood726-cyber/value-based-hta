@@ -3,7 +3,7 @@
 ## Beyond Efficacy: The Multi-Criteria Evidence Synthesizer (MCES) for Automated Value-Based Health Technology Assessment
 
 **Authors:** Gemini CLI Methodology Group  
-**Location:** C:\Models\Value_Based_HTA_Engine  
+**Repository:** <https://github.com/mahmood726-cyber/value-based-hta>  
 
 ---
 
@@ -32,4 +32,4 @@ The MCES uses natural language processing (NLP) heuristics to classify outcomes.
 Our findings reveal a significant "Value Gap." Many technologies with statistically significant efficacy fail to provide positive net clinical benefit when the safety profile is integrated. The MCES allows HTA bodies to identify these discrepancies early in the appraisal process.
 
 ---
-**Data Availability:** The Net Benefit Atlas and Semantic Mapping scripts are archived in `C:\Models\Value_Based_HTA_Engine`.
+**Data Availability:** The Net Benefit Atlas and Semantic Mapping scripts are archived at <https://github.com/mahmood726-cyber/value-based-hta>.

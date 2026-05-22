@@ -3,7 +3,7 @@
 This manifest is the shortest reviewer-facing rerun path for the local software package. It lists the files that should be sufficient to recreate one worked example, inspect saved outputs, and verify that the manuscript claims remain bounded to what the repository actually demonstrates.
 
 ## Reviewer Entry Points
-- Project directory: `C:\Models\Value_Based_HTA_Engine`.
+- Repository: <https://github.com/mahmood726-cyber/value-based-hta>.
 - Preferred documentation start points: `README.md`, `f1000_artifacts/tutorial_walkthrough.md`.
 - Detected public repository root: `https://github.com/mahmood726-cyber/value-based-hta`.
 - Detected public source snapshot: Fixed public commit snapshot available at `https://github.com/mahmood726-cyber/value-based-hta/tree/0752dc772dc1f297d4d3ce03e1b7c91e3f6e6b77`.
