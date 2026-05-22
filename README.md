@@ -40,8 +40,18 @@ install.packages(c("data.table", "dplyr", "stringr", "jsonlite", "readr"))
 
 ## Running the pipeline
 
-Both R scripts resolve paths relative to the repository root by default, so
-they work without configuration:
+A `Makefile` provides the standard entry points:
+
+```bash
+make pipeline   # phase 1 + phase 2 (default INPUT and OUTPUT_DIR)
+make phase1     # semantic_outcome_mapper.R only
+make phase2     # calculate_net_benefit.R (depends on phase1)
+make test       # pytest smoke + data-contract + consistency tests
+make clean      # remove the output/ directory
+```
+
+Both R scripts also work standalone — they resolve paths relative to the
+repository root by default:
 
 ```bash
 Rscript semantic_outcome_mapper.R
@@ -49,7 +59,7 @@ Rscript calculate_net_benefit.R
 ```
 
 Override input/output locations via positional arguments or environment
-variables (useful in CI):
+variables:
 
 ```bash
 VBHTA_INPUT=/path/to/results.csv \

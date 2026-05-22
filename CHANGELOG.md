@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-05-20 (round 3)
+- Added a `Makefile` driver: `make pipeline`, `make phase1`, `make phase2`,
+  `make test`, `make clean`.
+- Fixed `docs/protocol.md` rendering: every line had eight leading spaces,
+  causing GitHub to render the whole document as a single code block.
+- Added `tests/test_submission_consistency.py` cross-checking that
+  `config.json`, `paper.json`, and `paper.md` agree on the canonical body
+  and sentence array (catches silent drift between the three artefacts).
+- README now documents the Makefile entry points.
+
 ## 2026-05-20 (round 2)
 - Removed remaining `C:\Models\Value_Based_HTA_Engine` Windows-path leaks from
   `F1000_Software_Tool_Article.md`, `F1000_Reviewer_Rerun_Manifest.md`,
