@@ -18,10 +18,11 @@ cat("===========================================================================
 
 ")
 
-# Paths
-map_file <- "C:/Models/Value_Based_HTA_Engine/output/outcome_mapping.csv"
-quality_file <- "C:/Models/HTA_Evidence_Integrity_Suite/analysis/output/unified_hta_validation.csv"
-output_path <- "C:/Models/Value_Based_HTA_Engine/output/net_clinical_benefit.csv"
+# Paths (override with environment variables for portability)
+output_dir   <- Sys.getenv("VBHTA_OUTPUT_DIR", "output")
+map_file     <- Sys.getenv("VBHTA_MAP_FILE",     file.path(output_dir, "outcome_mapping.csv"))
+quality_file <- Sys.getenv("VBHTA_QUALITY_FILE", file.path(output_dir, "unified_hta_validation.csv"))
+output_path  <- Sys.getenv("VBHTA_NCB_FILE",     file.path(output_dir, "net_clinical_benefit.csv"))
 
 # Load Data
 cat("Loading datasets...

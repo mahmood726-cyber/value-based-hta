@@ -19,10 +19,11 @@ cat("===========================================================================
 
 ")
 
-# Paths
-input_file <- "C:/Models/Value_Based_HTA_Engine/data/remediation_analysis_results.csv"
-output_path <- "C:/Models/Value_Based_HTA_Engine/output/outcome_mapping.csv"
-dir.create("C:/Models/Value_Based_HTA_Engine/output", showWarnings = FALSE)
+# Paths (override with environment variables for portability)
+input_file  <- Sys.getenv("VBHTA_INPUT",  "data/remediation_analysis_results.csv")
+output_dir  <- Sys.getenv("VBHTA_OUTPUT_DIR", "output")
+output_path <- file.path(output_dir, "outcome_mapping.csv")
+dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
 
 data <- fread(input_file)
 

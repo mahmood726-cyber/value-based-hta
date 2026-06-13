@@ -1,14 +1,25 @@
-# Value Based HTA Engine: a software tool for reproducible evidence-synthesis and modeling workflows
+# Value Based HTA Engine
+
+An R toolkit for two-step value-based health technology assessment over
+meta-analytic review data: (1) semantic mapping of clinical endpoints into
+Benefit vs Harm, and (2) Net Clinical Benefit (NCB) synthesis that pairs the
+strongest benefit and harm signal per review and assigns a value class.
 
 ## Installation
-Use the dependency files in this directory (for example `requirements.txt`, `environment.yml`, `DESCRIPTION`, or equivalent project-specific files) to create a clean local environment before running analyses.
+Create the environment from `environment.yml` (conda; provides R 4.3 with
+`data.table`/`dplyr`/`stringr` plus Python 3.11 for the tests).
 Document any package-version mismatch encountered during first run.
 
 ## Quick Start
-1. Open the primary project entry file.
-2. Load demonstration or test data where available.
-3. Run default model workflow and inspect outputs.
-4. Export outputs and cross-check against listed evidence artifacts.
+1. `Rscript semantic_outcome_mapper.R` — classifies endpoints in
+   `data/remediation_analysis_results.csv` and writes `output/outcome_mapping.csv`.
+2. `Rscript calculate_net_benefit.R` — synthesises benefit/harm pairs into
+   `output/net_clinical_benefit.csv`.
+3. Open `HTA_Value_Dashboard.html` to inspect the value-class landscape.
+
+Input and output paths default to repo-relative locations and can be overridden
+with the `VBHTA_INPUT`, `VBHTA_OUTPUT_DIR`, `VBHTA_MAP_FILE`,
+`VBHTA_QUALITY_FILE`, and `VBHTA_NCB_FILE` environment variables.
 
 ## F1000 Package
 - Manuscript: `F1000_Software_Tool_Article.md`
